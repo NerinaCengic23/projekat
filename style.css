@@ -1,0 +1,80 @@
+*{
+    font-family: Verdana,Tahoma, sans-serif;
+    }
+    body{
+     background:rgba(159, 200, 255, 0.918);
+    }
+    
+   .logo{
+    display: inline-block;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 20px;
+    
+   }
+   article { 
+    clear:both; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 350px;
+    margin-left: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding:50px;
+    background-color:  white;
+    border-radius: 20px;
+ 
+   } 
+
+    a{
+    text-decoration: none; 
+    color:black; 
+    }
+
+    a:hover { 
+        color: rgb(124, 103, 103); 
+        } 
+ 
+    input[type=text], input[type=email], input[type=submit], input[type=reset],[type=select], [type=password], textarea {
+            width: 40%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border:0;
+            box-shadow: 3px 3px 8px;  
+        }
+     input[type=date]{
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border:0;
+            box-shadow: 3px 3px 8px;  
+     }
+    button {
+            background-color: rgb(170, 161, 255); 
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            border:0;
+            box-shadow: 3px 3px 8px;     
+        }
+    button :hover{
+           color: rgb(138, 123, 101);
+        }
+        a {
+            text-decoration: none; 
+            color:black;
+            font-weight:200;
+        }
+    textarea{
+            resize: vertical;
+            overflow: scroll;
+        }
+        
+    input[type=submit] {
+            appearance:none;
+            width:50%;
+            background-color: rgb(192, 170, 138);
+        }
+    #naslov {
+      text-shadow:2px 3px #ffffff79;
+    }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Firebase SignUp Form</title>
+  </head>
+  <body>
+    <article align="center">
+      <h1 align="center">Sign Up</h1>
+
+      <form onsubmit="signup(event)">
+        <input id="firstname" type="text" placeholder="First Name" />
+        <br />
+
+        <input id="lastname" type="text" placeholder="Last Name" />
+
+        <br />
+
+        <input id="email" type="email" placeholder="Email" />
+
+        <br />
+
+        <input id="pass" type="password" placeholder="Password" />
+        <br />
+        <br />
+        <button type="submit" value="Sign Up">SIGN UP</button>
+      </form>
+      <br />
+
+      <a href="login.html">Already got an account? Log in</a>
+    </article>
+    
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyA1Kvk899fTLiOy6YDPLQMFz4umM4WUiFg",
+    authDomain: "si-peti-113d7.firebaseapp.com",
+    projectId: "si-peti-113d7",
+    storageBucket: "si-peti-113d7.appspot.com",
+    messagingSenderId: "941252575792",
+    appId: "1:941252575792:web:78c11c8b7e57b1bd8063f5",
+    measurementId: "G-FBMC24R3TY"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+      
+  var firstName=document.getElementById("firstname");
+  var lastName=document.getElementById("lastname");
+  var email=document.getElementById("email");
+  var pass=document.getElementById("pass");
+
+window.signup=function(e){
+    e.preventDefault();
+    var obj={
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email:email.value,
+        pass: pass.value,
+    }
+
+    createUserWithEmailAndPassword (auth, obj.email,obj.pass)
+    .then(function(success){
+        alert("Sign up successful")
+    })
+    .catch(function(err){
+        alert("error"+err)
+    })
+    console.log(obj);
+};
+
+    
+      
+    </script>
+  </body>
+</html>

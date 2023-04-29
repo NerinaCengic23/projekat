@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+   
+
+    <title>Login Firebase Form</title>
+  </head>
+  <body>
+    
+    <article align="center">
+      <h1 align="center">Log In</h1>
+
+      <form
+        action="#"
+        onsubmit="login(event)">
+          <input
+            id="email"
+            type="email"
+            placeholder="Email"
+          />
+        </div>
+        <br />
+
+          <input
+            id="pass"
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+        <br />
+        <br>
+        <button type="submit" value="Log In">
+          LOG IN
+        </button>
+      </form>
+      <br />
+      <a href="index.html">Dont have an account? Sign in</a>
+    </article>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+        const firebaseConfig = {
+          apiKey: "AIzaSyA1Kvk899fTLiOy6YDPLQMFz4umM4WUiFg",
+      authDomain: "si-peti-113d7.firebaseapp.com",
+      projectId: "si-peti-113d7",
+      storageBucket: "si-peti-113d7.appspot.com",
+      messagingSenderId: "941252575792",
+      appId: "1:941252575792:web:78c11c8b7e57b1bd8063f5",
+      measurementId: "G-FBMC24R3TY"
+        };
+  
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const analytics=getAnalytics(app);
+        var email=document.getElementById("email");
+  var pass=document.getElementById("pass");
+
+
+window.login=function(e){
+    e.preventDefault();
+    var obj={
+        email:email.value,
+        pass: pass.value,
+    }
+
+    signInWithEmailAndPassword (auth, obj.email,obj.pass)
+    .then(function(success){
+        alert("Welcome on our website!");
+        window.location.href="index1.html";
+    })
+    .catch(function(err){
+        window.location.replace("index1.html");
+        alert("error"+err)
+    })
+    console.log(obj);
+};
+      
+        
+      </script>
+  </body>
+</html>
